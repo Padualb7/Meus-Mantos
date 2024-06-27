@@ -1,0 +1,33 @@
+<div class="register-page">
+    <div class="content">
+        <h1>Cadastre-se</h1>
+
+        <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <label for="user">User</label>
+            <input type="text" name="user" formControlName="user">
+            <label for="password">Senha</label>
+            <input type="password" name="password" formControlName="password">
+
+            <label for="confirmPassword">Confirmar senha</label>
+            <input type="password" name="confirmPassword" formControlName="confirmPassword">
+
+            @if(hasError){
+            <p class="error">As senhas não coincidem</p>
+            }
+            @if(this.errorMsg){
+            <p class="error">{{this.errorMsg}}</p>
+            }
+            <button type="submit">Cadastrar</button>
+
+
+        </form>
+
+        <a href="">Já tenho cadastro</a>
+    </div>
+
+    <div class="image-container">
+        <div class="background"></div>
+        <img src="../../assets/login.jpg" alt="">
+
+    </div>
+</div>

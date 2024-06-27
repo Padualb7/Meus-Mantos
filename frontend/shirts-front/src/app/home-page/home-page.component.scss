@@ -1,0 +1,97 @@
+:host{
+  width: 100%;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os cards */
+}
+
+.card {
+    flex: 1 1 380px;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    max-width: 380px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .color-box {
+      width: 50px;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+  
+    .card-content {
+      padding: 16px;
+      flex: 1;
+  
+      p {
+        margin: 4px 0;
+      }
+  
+      .team {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+  
+      button {
+        margin-right: 8px;
+        background-color: white;
+        padding: .75rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+  
+        &:first-of-type {
+          
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23666666'%3E%3Cpath d='M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z'/%3E%3C/svg%3E");
+          
+        }
+  
+        &:last-of-type {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23666666'%3E%3Cpath d='M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z'/%3E%3C/svg%3E");
+          
+        }
+      }
+    }
+  }
+
+  $colors: (
+  "Vermelho": #9e0909,
+  "Azul": #01019b,
+  "Verde": #008500,
+  "Amarelo": #dbdb61,
+  "Preto": #030303,
+  "Branco": #FFFFFF,
+  "Roxo": #580358,
+  "Laranja": #b4790c,
+  "Rosa": #ee9fac,
+  "Outro": #bdbdbd
+);
+
+@each $name, $color in $colors {
+  .card-#{$name} {
+    background-color: $color;
+  }
+}
+  

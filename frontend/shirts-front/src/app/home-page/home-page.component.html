@@ -1,0 +1,29 @@
+<div class="home-container">
+
+    <div class="header">
+        <h1>Camisas cadastradas</h1>
+        <button routerLink="/create">Cadastrar</button>
+
+    </div>
+
+    <div class="card-container">
+        @for( shirt of this.shirts ; track shirt){
+        <div class="card">
+            <div class="color-box" [ngClass]="getColorClass(shirt.color)"></div>
+            <div class="card-content">
+                <div class="header">
+                    <h1 class="team">{{shirt.team}} - {{shirt.year}}</h1>
+                    <div class="buttons">
+                        <button (click)="delete(shirt.id!)"></button>
+                        <button (click)="edit(shirt)"></button>
+                    </div>
+                </div>
+                <p>{{shirt.type}}</p>
+                <p>Tamanho: {{shirt.size}}</p>
+
+            </div>
+        </div>
+
+        }
+    </div>
+</div>
