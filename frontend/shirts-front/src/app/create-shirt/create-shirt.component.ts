@@ -66,10 +66,6 @@ export class CreateShirtComponent implements OnInit{
     }
     this.router.navigate(['/home']);
     alert('Camisa cadastrada com sucesso')
-
-
-      
-      // Aqui você pode adicionar a lógica para enviar os dados para o backend
     } else {
       console.log('Formulário inválido');
     }

@@ -26,8 +26,6 @@ export class HomePageComponent implements AfterViewInit, OnInit{
   }
   delete(shirtId: number){
     this.api.deleteShirt(shirtId).subscribe((value) => {
-      console.log(value);
-      
       this.shirts = this.shirts.filter(shirt => shirt.id !== shirtId);
     });
     

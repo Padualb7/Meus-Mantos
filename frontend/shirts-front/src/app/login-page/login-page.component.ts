@@ -27,19 +27,21 @@ export class LoginPageComponent {
     if (this.loginForm.valid) {
       const username = this.loginForm.value.username;
       const password = this.loginForm.value.password;
-      console.log('Sending credentials:', { username, password }); // Adicione um log para verificar as credenciais
+      console.log('Sending credentials:', { username, password }); 
       this.api.login(username, password).subscribe(
         (response) => {
           console.log('Login successful:', response);
+          // Define como autenticado
           this.isAuthenticated = true; 
           this.router.navigate(['/home']);
-          // Define como autenticado
-          // Aqui você pode redirecionar para a página principal, por exemplo
+          
+          
         },
         (error) => {
           console.error('Login error:', error);
           if (error.error && error.error.message) {
-            alert(error.error.message); // Exibe mensagem de erro do backend
+            // Exibe mensagem de erro do backend
+            alert(error.error.message); 
           } else {
             this.loginError = true
           }
@@ -51,8 +53,9 @@ export class LoginPageComponent {
   }
 
   logout() {
-    this.api.logout(); // Chama o método de logout do serviço ApiService
-    this.isAuthenticated = false; // Define como não autenticado
+    // Chama o método de logout do serviço ApiService
+    this.api.logout(); 
+    this.isAuthenticated = false; 
     
   }
   
