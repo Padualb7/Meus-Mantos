@@ -28,7 +28,7 @@
 
 Clone o repositório:
 ```
-git clone https://github.com/Padualb7/PW.git
+git clone https://github.com/Padualb7/Meus-Mantos.git
 ```
 ## BACKEND
 
